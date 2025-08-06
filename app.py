@@ -2,14 +2,19 @@ import streamlit as st
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from dotenv import load_dotenv
-import os
+#import os
+import streamlit as st
 
 # Load client credentials
 load_dotenv()
 
-CLIENT_ID = os.getenv("SPOTIPY_CLIENT_ID")
+'''CLIENT_ID = os.getenv("SPOTIPY_CLIENT_ID")
 CLIENT_SECRET = os.getenv("SPOTIPY_CLIENT_SECRET")
-REDIRECT_URI = os.getenv("SPOTIPY_REDIRECT_URI")
+REDIRECT_URI = os.getenv("SPOTIPY_REDIRECT_URI")'''
+
+CLIENT_ID = st.secrets["CLIENT_ID"]
+CLIENT_SECRET = st.secrets["CLIENT_SECRET"]
+REDIRECT_URI = st.secrets["REDIRECT_URI"]
 
 # Set up Spotify authentication
 sp_oauth = SpotifyOAuth(client_id=CLIENT_ID,
