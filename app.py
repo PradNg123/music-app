@@ -33,7 +33,7 @@ st.title("🎵 Spotify Auth Demo")
 # Display login URL
 if st.session_state.token_info is None:
     st.markdown(f"[Click here to authorize Spotify]({auth_url})")
-    code = st.query_params().get("code", [None])[0]
+    code = st.query_params.get("code", [None])[0]
 
     if code:
         # Get token using the code and save in session state
